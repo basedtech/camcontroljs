@@ -1,0 +1,319 @@
+html, body {
+	font-family: sans-serif;
+	color: black;
+	margin: 0px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.copy {
+	-webkit-user-select: all;
+	user-select: all;	
+}
+
+a {
+	display: block;
+	padding: 5px;
+	color: #b3dbdb;
+}
+
+/* Browser patches */
+* {
+	-webkit-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+
+img {
+	pointer-events: none;
+}
+
+.flex-column {
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;	
+}
+
+.flex-row {
+	display: flex;
+	flex-flow: row;
+	flex-grow: 1;	
+}
+
+.center {
+	justify-content: center;
+	align-items: center;
+}
+
+.button {
+	padding: 15px;
+	margin: 1px;
+	background: #767676;
+	color: white;
+	cursor: pointer;
+	user-select: none;
+}
+
+.button:active { background: #525252; }
+
+.button.red { background: #b56c6c; }
+.button.red:active { background: #6f3d3d; }
+.button.go { background: #86a685; }
+.button.go:active { background: #5b715a;  }
+
+.select {
+	background: rgba(36, 36, 36, 0.5);
+	color: white;
+	cursor: pointer;
+	user-select: none;
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.select.img { padding: 7px; }
+.select span { padding: 10px; }
+.select span.small { font-size: 9px; }
+
+.select.off { background: grey; }
+.select.on { background: #404040; }
+.select:active { background: rgba(36, 36, 36, 0.8); }
+
+.select img {
+	width: 35px;
+	width: 35px;
+	display: block;
+}
+
+.margin-box {
+	background: #b4b4b4;
+	padding: 2px;
+	margin: 10px;
+	color: black;
+}
+
+.button.margin { margin: 10px; }
+.textarea.margin { margin: 10px; }
+
+.menu-table {
+	display: flex;
+	justify-content: center;
+	flex-flow: wrap;
+	color: white;
+	max-width: 400px;
+	margin: auto;
+}
+
+.menu-table div {
+	margin: 5px;
+	width: 30%;
+	min-width: 100px;
+	height: 120px;
+	text-align: center;
+	background: #949494;
+	float: left;
+	cursor: pointer;
+}
+
+.menu-table div img {
+	width: 60%;
+}
+
+.menu-table div p {
+	margin: 0px;
+}
+
+.menu-table div:active {
+	background: #707070;
+}
+
+.popup {
+	overflow: scroll;
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	top: calc(40% / 2);
+	left: calc(40% / 2);
+	background: #dfdfdf;
+	padding: 10px;
+	border: 3px solid #bfbfbf;
+}
+
+.popup-content {
+	text-align: center;
+}
+
+.full-slider {
+	width: 100%;
+}
+
+.failed {
+	color: #990101;
+}
+
+#actions {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+}
+
+#actions .select {
+	padding: 13px;
+	margin: 2px 2px 0px 0px;
+}
+
+#configurations .select {
+	height: 50px;
+	margin: 2px 0px 0px 2px;
+	padding: 6px;
+}
+
+#settings .select {
+	height: 50px;
+	margin: 2px 0px 0px 2px;
+}
+
+#configurations {
+	position: absolute;
+	top: 0px;
+	left: 51px;
+	display: flex;
+	width: 100%;
+	max-width: 200px;
+}
+
+#settings {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	flex-flow: column;
+}
+
+#liveview {
+	background: transparent;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+#indicators {
+	background: rgba(36, 36, 36, 0.6);
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	padding: 2px;
+	color: white;
+	display: table;
+}
+
+#indicators div {
+	margin: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#ic-led {
+	width: 10px;
+	height: 10px;
+	/* display: block; */
+}
+
+.script-task {
+	padding: 5px;
+	border: 2px solid gray;
+	margin: 5px;
+	background: antiquewhite;
+}
+
+.task-icon {
+	width: 20px;
+	vertical-align: middle;
+	float: right;
+}
+
+.script-task img:active {
+	background: white;
+}
+
+.settings-popup p {
+	background: #b0bec2;
+	padding: 5px;
+}
+
+.settings-popup input, val {
+	float: right;
+}
+
+.settings-popup span {
+	float: left;
+}
+
+.number-selector {
+	display: inline-block;
+	padding: 10px;
+	background: #9f9f8d;
+	margin: 2px;
+	color: white;
+	cursor: pointer;
+}
+
+.number-selector {
+	background: #878775;
+}
+
+.textarea {
+	width: 100%;
+	box-sizing: border-box;
+	resize: none;
+	height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+	.popup {
+		width: 80%;
+		height: 80%;
+		top: calc(15% / 2);
+		left: calc(15% / 2);
+	}
+
+	#actions {
+		position: absolute;
+		top: unset;
+		bottom: 1px;
+		left: 1px;
+		right: 1px;
+		height: auto;
+		display: flex;
+		flex-flow: row;
+	}
+
+	#actions .select {
+		padding: 5px;
+	}
+
+	#indicators {
+		position: absolute;
+		left: 0px;
+		bottom: 60px;
+	}
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Intervalometer</title>
+	<style>
+		body, html {
+			overflow-y: scroll;
+		}
+
+		.main {
+			color: white;
+			display: block;
+			text-align: center;
+			justify-content: center;
+			margin: auto;
+		}
+
+		.flex-horiz {
+			display: flex;
+			flex-flow: row;
+			flex: 0 0 100%;
+		}
+
+		.container-cap {
+			margin: 10px;
+			background: grey;
+			padding: 2px;
+			text-align: left;
+			padding-left: 10px;
+		}
+
+		.container-cap.script { display: block; padding: 10px; }
+
+		.screen {
+			display: none;
+		}
+
+		.textarea {
+			height: 250px;
+			padding: 10px;
+			outline: none;
+		}
+
+		input {
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+	<div class="flex-horiz">
+		<div id="select-bulb" class="select off"><span>Bulb</span></div>
+		<div id="select-std" class="select on"><span>Standard</span></div>
+		<div id="select-script" class="select off"><span>Scripting</span></div>
+	</div>
+
+	<div class="margin-box">
+		<p class="taken-status">Taken X photos so far.</p>
+	</div>
+	<div class="margin-box" id="status-box">
+		<p id="status" class="cam-status">Not Connected.</p>
+	</div>
+
+	<div class="screen" id="screen-bulb">
+		<div class="container-cap">
+			<p>Make sure you are in manual (M) mode.</p>
+			<p>Start sequence after <input min="0" type="number" id="bulbStart"> seconds</p>
+			<p>Take <input min="0" type="number" id="bulbShots"> shots</p>
+			<p>Wait <input min="1" type="number" id="bulbBetween"> seconds in between shots</p>
+			<p>Expose for <input min="0" type="number" id="bulbExp"> seconds</p>
+		</div>
+		<div id="bulb-button" class="button margin">Start sequence</div>
+	</div>
+
+	<div class="screen" id="screen-std">
+		<div class="container-cap">
+			<p>Start sequence after <input min="0" type="number" id="stdStart"> seconds</p>
+			<p>Take <input min="0" type="number" id="stdShots"> shots</p>
+			<p>Wait <input min="1" type="number" id="stdBetween"> seconds in between shots</p>
+		</div>
+		<div id="std-button" class="button margin">Start sequence</div>
+		<div onclick="int.stdSingle()" id="std-button-single" class="button margin">Take single picture</div>
+	</div>
+
+	<div class="screen" id="screen-script">
+		<div class="container-cap script">
+			<a href="#" onclick="ui.openLink('https://camcontrol.danielc.dev/docs')">Official Scripting Documentation</a>
+<textarea class="textarea" id="script" spellcheck="true" autocapitalize="off">// await/async is required
+for (var i = 0; i < 5; i++) {
+  await ptp.capture();
+  await sleep(1);
+}</textarea>
+		</div>
+		<div onclick="int.runScript()" id="std-button-single" class="button margin">Run script</div>
+		<p id="script-result">Script will be saved automatically.</p>
+	</div>
+
+	<div class="padded-box">
+		<p>
+		Created by Daniel C
+		<br>
+		Send the developer a few dogecoins: 
+		<span class="copy">DLsYaHEUyadudCPzD9cwiCGt973hv31sdF</span>
+		</p>
+	</div>
+</div>
+</body>
+<script src="task.js"></script>
+<script src="ptp.js"></script>
+<script src="ui.js"></script>
+<script src="popups.js"></script>
+<script src="backend.js"></script>
+<script src="common.js"></script>
+<script src="settings.js"></script>
+<script src="interv.js"></script>
+</html>

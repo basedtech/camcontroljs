@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="favicon.ico">
+	<title>CamControl</title>
+</head>
+<body>
+	<canvas class="liveview" id="liveview">Browser doesn't support canvas</canvas>
+	<div id="configurations">
+		<div onclick="ui.openISOSelector()" class="select"><span id="select-iso">0</span></div>
+		<div onclick="ui.openShutterSelector()" class="select"><span id="select-shutter">0s</span></div>
+		<div onclick="ui.openApertureSelector()" class="select"><span id="select-aperture">f/0.0</span></div>
+		<div onclick="ui.openFormatSelector()" class="select"><span id="select-format">?</span></div>
+		<div onclick="ui.openWhiteBalanceSelector()" class="select"><span class="small" id="select-white-balance">?</span></div>
+	</div>
+	<div id="settings"> 
+		<div class="select img" id="select-menu" onclick="ui.showMenu()"><img src="icons/menu.png"></div>
+		<div class="select img" id="select-folder" onclick="ui.gotoFiles()"><img src="icons/folders.png"></div>
+		<div class="select img" id="select-img" onclick="ui.viewLastFile()"><img src="icons/photo.png"></div>
+	</div> 
+	<div id="actions">
+		<!-- TODO: programmically add events -->
+		<div class="select img" id="select-focus-in"><img src="icons/circle-plus.png"></div>
+		<div class="select img" id="select-focus-out"><img src="icons/circle-minus.png"></div>
+		<div class="select img" onclick="core.toggleLv(this)"><img id="select-live" src="icons/player-pause.png"></div>
+		<div class="select img" onclick="core.toggleMirror(this)"><img id="select-mirror" src="icons/viewfinder-off.png"></div>
+		<div class="select img" onclick="core.performBulb(this)"><img id="select-bulb" src="icons/bulb-off.png"></div>
+		<div class="select img" onclick="ptp.capture(this)"><img id="select-take" src="icons/aperture.png"></div>
+	</div>
+	<!-- <div id="bottom-right"> -->
+		<!-- <div class="select img" id="select-bulb-off" onclick="core.performBulb(this)"><img src="icons/bulb-off.png"></div> -->
+		<!-- <div class="select img" id="select-take"><img src="icons/aperture.png"></div> -->
+	<!-- </div> -->
+	<div id="indicators">
+		<div id="ic-led"></div>
+		<div id="ic-focus"></div>
+		<div id="ic-dbg"></div>
+		<div><img src="icons/battery.png" id="ic-bat" width="35"></div>
+	</div>
+</body>
+<script src="common.js"></script>
+<script src="task.js"></script>
+<script src="ev.js"></script>
+<script src="ptp.js"></script>
+<script src="ui.js"></script>
+<script src="popups.js"></script>
+<script src="backend.js"></script>
+<script src="settings.js"></script>
+<script src="core.js"></script>
+<script src="main.js"></script>
+</html>

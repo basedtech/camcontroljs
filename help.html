@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="files.css">
+	<title>Help</title>
+	<style>
+	.main {
+		padding: 15px;
+		color: white;
+	}
+	</style>
+</head>
+<body>
+	<div class="button" id="back" onclick="goBack()">Back</div>
+	<div class="main">
+		<h2>I can't connect to my camera</h2>
+		<ul>
+		<li>Try using a different USB cable - yours might be broken</li>
+		<li>For USB, you will need a micro-usb or USB-C to USB adapter. You can find these on Amazon
+		for under $5, but you may have one that was included with your phone.</li>
+		<li>You will need to give CamControl permission to access your camera. Other apps may be taking
+		control of the camera automatically or before CamControl can. You may need to reset the permissions
+		on these apps.</li>
+		</ul>
+
+		<h2>It crashes</h2>
+		<ul>
+		<li>Let me know, and I will make it right. If you bought the app on Google Play, you can refund it within 3 hours.</li>
+		<li>CamControl v0.1.0 only only has support for Canon EOS DSLR cameras, I don't have any other cameras to test with :)</li>
+		<li>Send me an email at brikbusters@gmail.com</li>
+		<li>Open a bug report at https://github.com/petabyt/camlib</li>
+		</ul>
+	</div>
+</div>
+</body>
+<script src="ptp.js"></script> 
+<script src="backend.js"></script> 
+<script>
+function goBack() {
+	if (backend.isAndroid) {
+		window.location.href = "index.html?android";
+	} else {
+		window.location.href = "index.html";
+	}
+}
+
+</script>
+</html>

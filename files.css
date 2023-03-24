@@ -1,0 +1,60 @@
+body, html {
+	overflow-y: scroll;
+}
+
+#back {
+	width: 100%;
+	margin: 0px;
+}
+
+#ic-bat {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 35px;
+	height: 35px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table img {
+	height: 35px;
+	width: 35px;
+}
+
+td, th {
+	text-align: left;
+	padding: 10px;
+	color: white;
+}
+
+table th:first-child, table td:first-child {
+	width: 35px;
+}
+
+tr {
+	cursor: pointer;
+}
+
+.note {
+	background: #c29f69;
+}
+
+.folder {
+	background: #9b9985;
+}
+
+.folder:active {
+	background: #b5b399;
+}
+
+.file {
+	background: #858e9b;
+}
+
+.folder:active {
+	background: #7d8b95;
+}
