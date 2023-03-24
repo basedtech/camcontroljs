@@ -1,2 +1,2 @@
 # camcontroljs
-HTML/CSS/JS source code for CamControl
+This contains majority of the frontend source code for CamControl.
